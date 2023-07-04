@@ -33,6 +33,14 @@ function Layout({ children }) {
                 Help
               </Link>
             </li>
+            <li>
+              <Link
+                to="/clock"
+                className={pathName === '/clock' ? classes.active : ''}
+              >
+                Clock
+              </Link>
+            </li>
           </ul>
         </div>
       </nav>
