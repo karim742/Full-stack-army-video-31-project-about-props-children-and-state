@@ -41,6 +41,14 @@ function Layout({ children }) {
                 Clock
               </Link>
             </li>
+            <li>
+              <Link
+                to="/task"
+                className={pathName === '/task' ? classes.active : ''}
+              >
+                Task
+              </Link>
+            </li>
           </ul>
         </div>
       </nav>
