@@ -1,15 +1,13 @@
 import React, { useState } from 'react';
 
-function CompletedTask({ task }) {
-  const [complete, setComplete] = useState(task.isCompleted);
-  function comfunc(e) {
-    setComplete((task.isCompleted = true));
-
-    console.log(task);
+function CompletedTask({ task, toggleTask }) {
+  function comfunc() {
+    const id = task.id;
+    toggleTask(id);
   }
   return (
     <>
-      <input type="checkbox" checked={complete} onChange={comfunc} />
+      <input type="checkbox" onChange={comfunc} />
     </>
   );
 }

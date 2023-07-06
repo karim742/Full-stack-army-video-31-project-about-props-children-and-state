@@ -3,7 +3,7 @@ import DeleteTask from './DeleteTask';
 import EditTask from './EditTask';
 import CompleteTask from './CompleteTask';
 
-function ShowTask({ tasks, delTask, editTask }) {
+function ShowTask({ tasks, delTask, editTask, toggleTask }) {
   return (
     <>
       <div style={{ marginTop: '1rem' }}>
@@ -15,7 +15,7 @@ function ShowTask({ tasks, delTask, editTask }) {
                 style={task.isCompleted ? { color: 'green' } : {}}
                 key={task.id}
               >
-                {<CompleteTask task={task} />}
+                {<CompleteTask task={task} toggleTask={toggleTask} />}
                 {task.text}
                 {<DeleteTask task={task} delTask={delTask} />}
                 {<EditTask task={task} editTask={editTask} />}

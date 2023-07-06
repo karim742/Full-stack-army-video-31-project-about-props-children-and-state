@@ -18,7 +18,15 @@ function Task() {
     setTasks([task, ...tasks]);
   };
 
-  const completedTask = () => {};
+  const toggleTask = (id) => {
+    const taski = tasks.map((task) => {
+      if (task.id == id) {
+        task.isCompleted = true;
+      }
+      return task;
+    });
+    setTasks(taski);
+  };
 
   const delTask = (id) => {
     setTasks(
@@ -44,7 +52,12 @@ function Task() {
       <Layout>
         <h1>Task</h1>
         <CreateTask addNewTask={addNewTask} />
-        <ShowTask tasks={tasks} delTask={delTask} editTask={editTask} />
+        <ShowTask
+          tasks={tasks}
+          delTask={delTask}
+          editTask={editTask}
+          toggleTask={toggleTask}
+        />
       </Layout>
     </>
   );
