@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 function CompletedTask({ task }) {
   const [complete, setComplete] = useState(task.isCompleted);
-  function comfunc() {
+  function comfunc(e) {
     setComplete((task.isCompleted = true));
 
     console.log(task);
