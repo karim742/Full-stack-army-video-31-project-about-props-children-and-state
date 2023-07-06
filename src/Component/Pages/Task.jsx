@@ -18,6 +18,8 @@ function Task() {
     setTasks([task, ...tasks]);
   };
 
+  const completedTask = () => {};
+
   const delTask = (id) => {
     setTasks(
       tasks.filter((task) => {
