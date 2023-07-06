@@ -1,17 +1,17 @@
 import React from 'react';
 import DeleteTask from './DeleteTask';
 
-function ShowTask({ tasks }) {
+function ShowTask({ tasks, delTask }) {
   return (
     <>
       <div style={{ marginTop: '1rem' }}>
         <h3>All task list</h3>
         {tasks.length > 0 ? (
           <ul>
-            {tasks.map((task, index, tasks) => (
+            {tasks.map((task) => (
               <li key={task.id}>
                 {task.text}
-                {<DeleteTask index={index} tasks={tasks} />}
+                {<DeleteTask task={task} delTask={delTask} />}
               </li>
             ))}
           </ul>

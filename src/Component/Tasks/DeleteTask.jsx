@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-
-function DeleteTask({ index, tasks }) {
-  const delTask = () => {
-    tasks.splice(index, 1);
-  };
+function DeleteTask({ task, delTask }) {
+  function delfuc() {
+    const id = task.id;
+    delTask(id);
+  }
   return (
     <>
-      <button onClick={delTask}>Delete</button>
+      <button onClick={delfuc}>Delete</button>
     </>
   );
 }
