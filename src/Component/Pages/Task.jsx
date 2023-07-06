@@ -20,8 +20,19 @@ function Task() {
 
   const delTask = (id) => {
     setTasks(
-      tasks.filter((tasks) => {
-        return tasks.id != id;
+      tasks.filter((task) => {
+        return task.id != id;
+      })
+    );
+  };
+
+  const editTask = (id, inputText) => {
+    setTasks(
+      tasks.map((task) => {
+        if (task.id === id) {
+          inputText ? (task.text = inputText) : alert('input edit text');
+        }
+        return task;
       })
     );
   };
@@ -31,7 +42,7 @@ function Task() {
       <Layout>
         <h1>Task</h1>
         <CreateTask addNewTask={addNewTask} />
-        <ShowTask tasks={tasks} delTask={delTask} />
+        <ShowTask tasks={tasks} delTask={delTask} editTask={editTask} />
       </Layout>
     </>
   );

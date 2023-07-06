@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 function DeleteTask({ task, delTask }) {
   function delfuc() {
     const id = task.id;

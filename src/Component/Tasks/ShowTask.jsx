@@ -1,7 +1,8 @@
 import React from 'react';
 import DeleteTask from './DeleteTask';
+import EditTask from './EditTask';
 
-function ShowTask({ tasks, delTask }) {
+function ShowTask({ tasks, delTask, editTask }) {
   return (
     <>
       <div style={{ marginTop: '1rem' }}>
@@ -12,6 +13,7 @@ function ShowTask({ tasks, delTask }) {
               <li key={task.id}>
                 {task.text}
                 {<DeleteTask task={task} delTask={delTask} />}
+                {<EditTask task={task} editTask={editTask} />}
               </li>
             ))}
           </ul>
